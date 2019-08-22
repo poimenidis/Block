@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Block</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <section class="hero is-primary is-medium">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <br>
+              <%=link_to image_tag("http://www.fromglam2gram.com/wp-content/uploads/2017/05/blog-pic-b2c.jpg", :border => 0, :alt => '', :title => ''), root_path, :class => 'dock-item'%>
+
+            </a>
+          </span>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <br>
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          <%= link_to "POIME'S BLOG", root_path, class: "navbar-item" %>
+        </h1>
+        <h1 class="title">
+         <%=@siteTitle %>
+        </h1>
+      </div>
+    </div>
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-foot">
+      <nav class="tabs">
+        <div class="container">
+          <ul>
+            <li><a><%= link_to "ALL POSTS", root_path, class: "navbar-item" %></a></li>
+            <li><a><%= link_to "WRITE A NEW POST", new_post_path, class: "navbar-item" %></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+
+    <%= yield %>
+  </body>
+</html>
